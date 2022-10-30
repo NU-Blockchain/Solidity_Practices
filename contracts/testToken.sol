@@ -9,6 +9,7 @@ contract NUToken is ERC20 {
     
     constructor( string memory name, string memory symbol, uint256 supplyCap) ERC20(name, symbol) {
         setTotalSupply = supplyCap;
+        _mint(msg.sender, 10);
     }
 
     function getName() public view returns (string memory) {
@@ -31,20 +32,19 @@ contract NUToken is ERC20 {
         return totalSupply();
     }
 
-    function mintToken(uint256 amount) public {
-        
-        if (totalSupply() + amount <= setTotalSupply) {
-            _mint(msg.sender, amount);
-        }else{
-            revert("Total supply exceeded!");
-        }
+    function mint(address minter, uint256 amount) public {
+        _mint(minter, amount);
     }
 
-    function burn(uint256 amount) public {
-        _burn(msg.sender, amount);
+    function mint2(uint256 amount) public {
+        _mint(msg.sender, amount);
     }
 
-    function safeTransfer(address to, uint256 amount) public {
-        _transfer(msg.sender, to, amount);
+    function burn(address account, uint256 amount) public {
+        _burn(account, amount);
+    }
+
+    function safeTransfer(address from, address to, uint256 amount) public {
+        _transfer(from, to, amount);
     }
 }
