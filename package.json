@@ -1,5 +1,5 @@
 {
-  "name": "truffletest",
+  "name": "truffle",
   "version": "1.0.0",
   "main": "truffle-config.js",
   "directories": {
@@ -8,12 +8,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
+  "keywords": [],
   "dependencies": {
     "@openzeppelin/contracts": "^4.7.3",
-    "node-darwin-arm64": "^18.9.0"
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1"
   },
   "description": ""
 }

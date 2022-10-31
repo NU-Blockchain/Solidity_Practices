@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract StorageNum {
+contract storageNum {
     
     mapping(address => uint256) public num;
 
@@ -9,7 +9,7 @@ contract StorageNum {
         num[msg.sender] = input;
     }
 
-    function get() public view returns (uint256) {
-        return num[msg.sender];
+    function get(address addr) public view returns (uint256) {
+        return num[addr];
     }
 }
